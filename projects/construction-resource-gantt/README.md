@@ -19,3 +19,8 @@ A visual task scheduling and resource planning tool embedded within Salesforce. 
 - Improved task visibility for managers
 - Centralized planning and resource allocation
 - Real-time updates in Salesforce for field users
+
+### 🖼 Screenshot Preview:
+
+![Bryntum Gantt Preview](./screenshots/1.png)
+![Bryntum Gantt Preview](./screenshots/2.png)
