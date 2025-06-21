@@ -28,5 +28,3 @@ The integration allowed dynamic file uploads, downloads, and previews directly f
 - Dynamic selection of target storage platform
 - Custom file manager UI using SLDS
 
-### 📸 Sample Screenshot:
-Add a screenshot of the UI file manager or dropdown.
