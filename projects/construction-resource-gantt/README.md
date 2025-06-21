@@ -3,6 +3,11 @@
 ### 🏗️ Project Description:
 A visual task scheduling and resource planning tool embedded within Salesforce. Built specifically for a construction-sector finance platform.
 
+### 🖼 Screenshot Preview:
+
+![Bryntum Gantt Preview](./screenshots/1.png)
+![Bryntum Gantt Preview](./screenshots/2.png)
+
 ### 🧠 Key Features:
 - Bryntum Gantt chart integration inside a Salesforce LWC
 - Timeline view of construction tasks and assignments
@@ -20,7 +25,3 @@ A visual task scheduling and resource planning tool embedded within Salesforce. 
 - Centralized planning and resource allocation
 - Real-time updates in Salesforce for field users
 
-### 🖼 Screenshot Preview:
-
-![Bryntum Gantt Preview](./screenshots/1.png)
-![Bryntum Gantt Preview](./screenshots/2.png)

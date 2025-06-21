@@ -3,6 +3,11 @@
 ### 🩺 Description:
 Developed a conversational bot interface within Salesforce to allow patients to **book appointments**, **reschedule**, or **cancel** based on availability.
 
+### 🖼 Screenshot Preview:
+
+![Health Bot](./screenshots/1.png)
+![Health Bot](./screenshots/2.png)
+
 ### 🔧 Tech Used:
 - Apex with custom appointment logic
 - Flow-based chatbot logic

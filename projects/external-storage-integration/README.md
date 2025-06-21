@@ -9,6 +9,12 @@ This project focused on enabling Salesforce users to upload and manage files via
 
 The integration allowed dynamic file uploads, downloads, and previews directly from Salesforce UI.
 
+### 🖼 Screenshot Preview:
+
+![External Storage](./screenshots/1.png)
+![External Storage](./screenshots/2.png)
+![External Storage](./screenshots/3.png)
+
 ### 🔧 Technologies Used:
 - Apex (HTTP Callouts + Named Credentials)
 - Lightning Web Components (LWC)

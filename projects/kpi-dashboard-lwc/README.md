@@ -3,6 +3,10 @@
 ### 📊 Overview:
 Created a real-time **Sales KPI dashboard** for business leaders to monitor performance and metrics inside Salesforce.
 
+### 🖼 Screenshot Preview:
+
+![Dashboard](./screenshots/1.png)
+
 ### 📈 Components:
 - Revenue trend chart (monthly/quarterly)
 - Top-performing regions and reps
