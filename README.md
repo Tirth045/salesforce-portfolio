@@ -17,6 +17,6 @@ Below are sample projects I’ve worked on:
 
 ---
 
-📄 [Resume](./resume/Tirth_Salesforce_Resume.pdf)  
+📄 [Resume](./resume/Tirth-Shah-Resume.pdf)  
 🔗 [LinkedIn](https://www.linkedin.com/in/tirth-shah-a075ab239)  
 📬 Email: tirthshah045@gmail.com
