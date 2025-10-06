@@ -1,194 +1,1431 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vernor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Roboto', sans-serif;
-        }
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Vernor - IT Services & Solutions</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
 
-        body {
-            line-height: 1.6;
-            color: #333;
-        }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background-color: #0a192f;
-            color: #fff;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
+       body {
+           font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+           line-height: 1.6;
+           color: #1f2937;
+           overflow-x: hidden;
+           background: #ffffff;
+       }
 
-        header .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
 
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
+       html {
+           scroll-behavior: smooth;
+       }
 
-        nav a:hover {
-            color: #00bfff;
-        }
 
-        section {
-            padding: 100px 50px;
-        }
+       .container {
+           max-width: 1280px;
+           margin: 0 auto;
+           padding: 0 24px;
+       }
 
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(10,25,47,0.8), rgba(10,25,47,0.8)), url('https://source.unsplash.com/1600x900/?technology') center/cover no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #fff;
-            text-align: center;
-        }
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+       /* Header Styles */
+       #header {
+           position: fixed;
+           top: 0;
+           left: 0;
+           right: 0;
+           z-index: 1000;
+           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+           background: transparent;
+       }
 
-        .hero p {
-            font-size: 1.2rem;
-        }
 
-        #about, #contact {
-            background-color: #f4f4f4;
-            padding: 50px;
-        }
-        
-        #about {
-          background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/about-bg.jpg') center/cover no-repeat;
-        }
+       #header.scrolled {
+           background: rgba(255, 255, 255, 0.95);
+           backdrop-filter: blur(12px);
+           box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.03);
+       }
 
-        h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #0a192f;
-        }
 
-        p {
-            max-width: 800px;
-            margin: 0 auto 20px;
-            font-size: 1rem;
-        }
+       .navbar {
+           padding: 20px 0;
+       }
 
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-        }
 
-        input, textarea {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
+       .nav-container {
+           max-width: 1280px;
+           margin: 0 auto;
+           padding: 0 24px;
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+       }
 
-        button {
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            background-color: #0a192f;
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
 
-        button:hover {
-            background-color: #00bfff;
-        }
+       .nav-logo {
+           display: flex;
+           align-items: center;
+           gap: 12px;
+           cursor: pointer;
+           transition: transform 0.3s ease;
+       }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0a192f;
-            color: #fff;
-        }
 
-        @media(max-width: 768px){
-            header {
-                flex-direction: column;
-                padding: 20px;
-            }
-            nav {
-                margin-top: 10px;
-            }
-        }
-    </style>
+       .nav-logo:hover {
+           transform: scale(1.02);
+       }
+
+
+       .logo-icon {
+           color: white;
+           transition: all 0.3s ease;
+           filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+       }
+
+
+       #header.scrolled .logo-icon {
+           color: #2563eb;
+       }
+
+
+       .logo-text {
+           font-size: 28px;
+           font-weight: 700;
+           color: white;
+           transition: color 0.3s ease;
+           letter-spacing: -0.5px;
+       }
+
+
+       #header.scrolled .logo-text {
+           color: #0f172a;
+       }
+
+
+       .nav-links {
+           display: flex;
+           align-items: center;
+           gap: 40px;
+       }
+
+
+       .nav-link {
+           color: white;
+           text-decoration: none;
+           transition: all 0.3s ease;
+           border: none;
+           background: none;
+           cursor: pointer;
+           font-size: 15px;
+           font-weight: 500;
+           position: relative;
+           padding: 8px 0;
+       }
+
+
+       .nav-link::after {
+           content: '';
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           width: 0;
+           height: 2px;
+           background: #2563eb;
+           transition: width 0.3s ease;
+       }
+
+
+       .nav-link:hover::after {
+           width: 100%;
+       }
+
+
+       .nav-link:hover {
+           color: #60a5fa;
+       }
+
+
+       #header.scrolled .nav-link {
+           color: #475569;
+       }
+
+
+       #header.scrolled .nav-link:hover {
+           color: #2563eb;
+       }
+
+
+       .nav-btn {
+           background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+           color: white;
+           padding: 12px 28px;
+           border-radius: 10px;
+           text-decoration: none;
+           transition: all 0.3s ease;
+           font-weight: 600;
+           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+       }
+
+
+       .nav-btn:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+       }
+
+
+       .mobile-menu-btn {
+           display: none;
+       }
+
+
+       /* Hero Section */
+       .hero {
+           position: relative;
+           min-height: 100vh;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+           color: white;
+           overflow: hidden;
+       }
+
+
+       .hero::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           bottom: 0;
+           background:
+               radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.15) 0%, transparent 50%),
+               radial-gradient(circle at 80% 80%, rgba(6, 182, 212, 0.15) 0%, transparent 50%);
+           animation: gradientShift 10s ease infinite;
+       }
+
+
+       @keyframes gradientShift {
+           0%, 100% { opacity: 1; }
+           50% { opacity: 0.8; }
+       }
+
+
+       .hero-grid {
+           position: absolute;
+           inset: 0;
+           background-image:
+               linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+               linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+           background-size: 50px 50px;
+           opacity: 0.5;
+       }
+
+
+       .hero-content {
+           position: relative;
+           z-index: 10;
+           text-align: center;
+           max-width: 920px;
+           padding: 160px 24px 80px;
+           animation: fadeInUp 1s ease;
+       }
+
+
+       @keyframes fadeInUp {
+           from {
+               opacity: 0;
+               transform: translateY(30px);
+           }
+           to {
+               opacity: 1;
+               transform: translateY(0);
+           }
+       }
+
+
+       .hero-badge {
+           display: inline-flex;
+           align-items: center;
+           gap: 8px;
+           background: rgba(37, 99, 235, 0.1);
+           border: 1px solid rgba(37, 99, 235, 0.2);
+           padding: 8px 20px;
+           border-radius: 50px;
+           font-size: 14px;
+           font-weight: 500;
+           color: #60a5fa;
+           margin-bottom: 24px;
+           backdrop-filter: blur(10px);
+       }
+
+
+       .hero-title {
+           font-size: 64px;
+           font-weight: 800;
+           margin-bottom: 24px;
+           line-height: 1.1;
+           letter-spacing: -1.5px;
+           background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+           background-clip: text;
+       }
+
+
+       .hero-description {
+           font-size: 20px;
+           color: #cbd5e1;
+           margin-bottom: 40px;
+           line-height: 1.7;
+           max-width: 720px;
+           margin-left: auto;
+           margin-right: auto;
+       }
+
+
+       .hero-buttons {
+           display: flex;
+           gap: 16px;
+           justify-content: center;
+           flex-wrap: wrap;
+       }
+
+
+       .btn {
+           display: inline-flex;
+           align-items: center;
+           gap: 10px;
+           padding: 16px 32px;
+           border-radius: 12px;
+           font-weight: 600;
+           text-decoration: none;
+           transition: all 0.3s ease;
+           border: none;
+           cursor: pointer;
+           font-size: 16px;
+       }
+
+
+       .btn-primary {
+           background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+           color: white;
+           box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
+       }
+
+
+       .btn-primary:hover {
+           transform: translateY(-3px);
+           box-shadow: 0 12px 32px rgba(37, 99, 235, 0.4);
+       }
+
+
+       .btn-secondary {
+           background: rgba(255, 255, 255, 0.1);
+           color: white;
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           backdrop-filter: blur(10px);
+       }
+
+
+       .btn-secondary:hover {
+           background: rgba(255, 255, 255, 0.15);
+           transform: translateY(-3px);
+       }
+
+
+       /* Services Section */
+       .services {
+           padding: 120px 0;
+           background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+       }
+
+
+       .section-header {
+           text-align: center;
+           margin-bottom: 80px;
+       }
+
+
+       .section-title {
+           font-size: 48px;
+           font-weight: 800;
+           color: #0f172a;
+           margin-bottom: 16px;
+           letter-spacing: -1px;
+       }
+
+
+       .section-description {
+           font-size: 18px;
+           color: #64748b;
+           max-width: 640px;
+           margin: 0 auto;
+           line-height: 1.7;
+       }
+
+
+       .services-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+           gap: 32px;
+       }
+
+
+       .service-card {
+           background: white;
+           padding: 40px;
+           border-radius: 20px;
+           border: 1px solid #e2e8f0;
+           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+           position: relative;
+           overflow: hidden;
+       }
+
+
+       .service-card::before {
+           content: '';
+           position: absolute;
+           top: 0;
+           left: 0;
+           right: 0;
+           height: 4px;
+           background: linear-gradient(90deg, #2563eb, #06b6d4);
+           transform: scaleX(0);
+           transition: transform 0.4s ease;
+       }
+
+
+       .service-card:hover::before {
+           transform: scaleX(1);
+       }
+
+
+       .service-card:hover {
+           transform: translateY(-8px);
+           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+           border-color: #2563eb;
+       }
+
+
+       .service-icon {
+           width: 64px;
+           height: 64px;
+           border-radius: 16px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           margin-bottom: 24px;
+           transition: transform 0.3s ease;
+       }
+
+
+       .service-card:hover .service-icon {
+           transform: scale(1.1) rotate(5deg);
+       }
+
+
+       .service-icon.blue {
+           background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+           color: #2563eb;
+       }
+
+
+       .service-icon.green {
+           background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+           color: #059669;
+       }
+
+
+       .service-icon.orange {
+           background: linear-gradient(135deg, #fed7aa 0%, #fdba74 100%);
+           color: #ea580c;
+       }
+
+
+       .service-icon.purple {
+           background: linear-gradient(135deg, #e9d5ff 0%, #d8b4fe 100%);
+           color: #9333ea;
+       }
+
+
+       .service-icon.cyan {
+           background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
+           color: #0891b2;
+       }
+
+
+       .service-icon.rose {
+           background: linear-gradient(135deg, #fecdd3 0%, #fda4af 100%);
+           color: #e11d48;
+       }
+
+
+       .service-title {
+           font-size: 24px;
+           font-weight: 700;
+           color: #0f172a;
+           margin-bottom: 12px;
+       }
+
+
+       .service-description {
+           color: #64748b;
+           line-height: 1.7;
+           margin-bottom: 24px;
+       }
+
+
+       .service-features {
+           list-style: none;
+           display: flex;
+           flex-direction: column;
+           gap: 12px;
+       }
+
+
+       .service-features li {
+           color: #475569;
+           font-size: 14px;
+           padding-left: 24px;
+           position: relative;
+       }
+
+
+       .service-features li::before {
+           content: '✓';
+           position: absolute;
+           left: 0;
+           color: #2563eb;
+           font-weight: bold;
+       }
+
+
+       /* About Section */
+       .about {
+           padding: 120px 0;
+           background: white;
+       }
+
+
+       .about-grid {
+           display: grid;
+           grid-template-columns: 1fr 1fr;
+           gap: 80px;
+           align-items: center;
+       }
+
+
+       .about-title {
+           font-size: 48px;
+           font-weight: 800;
+           color: #0f172a;
+           margin-bottom: 24px;
+           letter-spacing: -1px;
+       }
+
+
+       .about-intro {
+           font-size: 18px;
+           color: #64748b;
+           line-height: 1.8;
+           margin-bottom: 48px;
+       }
+
+
+       .about-features {
+           display: flex;
+           flex-direction: column;
+           gap: 32px;
+       }
+
+
+       .about-feature {
+           display: flex;
+           gap: 20px;
+       }
+
+
+       .about-feature-icon {
+           width: 48px;
+           height: 48px;
+           background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+           border-radius: 12px;
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           color: #2563eb;
+           flex-shrink: 0;
+       }
+
+
+       .about-feature-title {
+           font-size: 20px;
+           font-weight: 700;
+           color: #0f172a;
+           margin-bottom: 8px;
+       }
+
+
+       .about-feature-text {
+           color: #64748b;
+           line-height: 1.6;
+       }
+
+
+       .stats-grid {
+           display: grid;
+           grid-template-columns: repeat(2, 1fr);
+           gap: 24px;
+       }
+
+
+       .stat-card {
+           padding: 40px;
+           border-radius: 20px;
+           text-align: center;
+           transition: transform 0.3s ease;
+       }
+
+
+       .stat-card:hover {
+           transform: translateY(-4px);
+       }
+
+
+       .stat-card.blue-stat {
+           background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+       }
+
+
+       .stat-card.dark-stat {
+           background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+       }
+
+
+       .stat-card.green-stat {
+           background: linear-gradient(135deg, #059669 0%, #047857 100%);
+       }
+
+
+       .stat-card.orange-stat {
+           background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%);
+       }
+
+
+       .stat-number {
+           font-size: 48px;
+           font-weight: 800;
+           color: white;
+           margin-bottom: 8px;
+       }
+
+
+       .stat-label {
+           color: rgba(255, 255, 255, 0.9);
+           font-size: 16px;
+           font-weight: 500;
+       }
+
+
+       /* Contact Section */
+       .contact {
+           padding: 120px 0;
+           background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+       }
+
+
+       .contact-wrapper {
+           max-width: 1200px;
+           margin: 0 auto;
+       }
+
+
+       .contact-header {
+           text-align: center;
+           margin-bottom: 80px;
+       }
+
+
+       .contact-title {
+           font-size: 48px;
+           font-weight: 800;
+           color: #0f172a;
+           margin-bottom: 16px;
+           letter-spacing: -1px;
+       }
+
+
+       .contact-subtitle {
+           font-size: 18px;
+           color: #64748b;
+       }
+
+
+       .contact-grid {
+           display: grid;
+           grid-template-columns: 1fr 1.5fr;
+           gap: 60px;
+       }
+
+
+       .contact-info {
+           background: white;
+           padding: 48px;
+           border-radius: 24px;
+           border: 1px solid #e2e8f0;
+           height: fit-content;
+       }
+
+
+       .contact-info-title {
+           font-size: 24px;
+           font-weight: 700;
+           color: #0f172a;
+           margin-bottom: 32px;
+       }
+
+
+       .contact-info-list {
+           display: flex;
+           flex-direction: column;
+           gap: 32px;
+       }
+
+
+       .contact-info-item {
+           display: flex;
+           gap: 16px;
+       }
+
+
+       .contact-icon {
+           width: 48px;
+           height: 48px;
+           padding: 12px;
+           background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+           border-radius: 12px;
+           color: #2563eb;
+           flex-shrink: 0;
+       }
+
+
+       .contact-label {
+           font-size: 14px;
+           color: #64748b;
+           margin-bottom: 4px;
+           font-weight: 500;
+       }
+
+
+       .contact-value {
+           color: #0f172a;
+           font-weight: 600;
+           text-decoration: none;
+       }
+
+
+       .contact-value:hover {
+           color: #2563eb;
+       }
+
+
+       .contact-form-wrapper {
+           background: white;
+           padding: 48px;
+           border-radius: 24px;
+           border: 1px solid #e2e8f0;
+       }
+
+
+       .contact-form-title {
+           font-size: 24px;
+           font-weight: 700;
+           color: #0f172a;
+           margin-bottom: 32px;
+       }
+
+
+       .contact-form {
+           display: flex;
+           flex-direction: column;
+           gap: 20px;
+       }
+
+
+       .form-input,
+       .form-textarea {
+           width: 100%;
+           padding: 16px 20px;
+           border: 2px solid #e2e8f0;
+           border-radius: 12px;
+           font-size: 15px;
+           transition: all 0.3s ease;
+           font-family: inherit;
+       }
+
+
+       .form-input:focus,
+       .form-textarea:focus {
+           outline: none;
+           border-color: #2563eb;
+           box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+       }
+
+
+       .form-textarea {
+           resize: vertical;
+           min-height: 120px;
+       }
+
+
+       .form-submit {
+           background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+           color: white;
+           padding: 16px 32px;
+           border: none;
+           border-radius: 12px;
+           font-size: 16px;
+           font-weight: 600;
+           cursor: pointer;
+           transition: all 0.3s ease;
+           box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+       }
+
+
+       .form-submit:hover {
+           transform: translateY(-2px);
+           box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+       }
+
+
+       /* Footer */
+       .footer {
+           background: #0f172a;
+           color: white;
+           padding: 80px 0 32px;
+       }
+
+
+       .footer-grid {
+           display: grid;
+           grid-template-columns: 2fr 1fr 1fr 1fr;
+           gap: 60px;
+           margin-bottom: 60px;
+       }
+
+
+       .footer-brand {
+           max-width: 320px;
+       }
+
+
+       .footer-logo {
+           display: flex;
+           align-items: center;
+           gap: 12px;
+           margin-bottom: 20px;
+       }
+
+
+       .footer-logo-icon {
+           color: #2563eb;
+       }
+
+
+       .footer-logo-text {
+           font-size: 24px;
+           font-weight: 700;
+       }
+
+
+       .footer-description {
+           color: #94a3b8;
+           line-height: 1.7;
+       }
+
+
+       .footer-heading {
+           font-size: 16px;
+           font-weight: 700;
+           margin-bottom: 20px;
+           color: white;
+       }
+
+
+       .footer-list {
+           list-style: none;
+           display: flex;
+           flex-direction: column;
+           gap: 12px;
+       }
+
+
+       .footer-list a {
+           color: #94a3b8;
+           text-decoration: none;
+           transition: color 0.3s ease;
+       }
+
+
+       .footer-list a:hover {
+           color: #2563eb;
+       }
+
+
+       .footer-bottom {
+           padding-top: 32px;
+           border-top: 1px solid rgba(148, 163, 184, 0.1);
+           text-align: center;
+           color: #64748b;
+       }
+
+
+       /* Responsive */
+       @media (max-width: 1024px) {
+           .about-grid,
+           .contact-grid {
+               grid-template-columns: 1fr;
+               gap: 48px;
+           }
+
+
+           .stats-grid {
+               grid-template-columns: repeat(2, 1fr);
+           }
+
+
+           .footer-grid {
+               grid-template-columns: repeat(2, 1fr);
+               gap: 40px;
+           }
+       }
+
+
+       @media (max-width: 768px) {
+           .nav-links {
+               position: fixed;
+               top: 0;
+               right: -100%;
+               width: 80%;
+               height: 100vh;
+               background: white;
+               flex-direction: column;
+               padding: 100px 32px 32px;
+               transition: right 0.3s ease;
+               box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+               align-items: flex-start;
+           }
+
+
+           .nav-links.active {
+               right: 0;
+           }
+
+
+           .nav-link {
+               color: #374151;
+               width: 100%;
+               padding: 12px 0;
+           }
+
+
+           .mobile-menu-btn {
+               display: flex;
+               flex-direction: column;
+               gap: 5px;
+               background: none;
+               border: none;
+               cursor: pointer;
+               padding: 8px;
+               z-index: 1001;
+           }
+
+
+           .hamburger {
+               width: 24px;
+               height: 2px;
+               background: white;
+               transition: all 0.3s ease;
+               border-radius: 2px;
+           }
+
+
+           #header.scrolled .hamburger {
+               background: #1f2937;
+           }
+
+
+           .mobile-menu-btn.active .hamburger:nth-child(1) {
+               transform: rotate(45deg) translate(6px, 6px);
+           }
+
+
+           .mobile-menu-btn.active .hamburger:nth-child(2) {
+               opacity: 0;
+           }
+
+
+           .mobile-menu-btn.active .hamburger:nth-child(3) {
+               transform: rotate(-45deg) translate(6px, -6px);
+           }
+
+
+           .hero-title {
+               font-size: 40px;
+           }
+
+
+           .hero-description {
+               font-size: 18px;
+           }
+
+
+           .section-title {
+               font-size: 36px;
+           }
+
+
+           .services-grid {
+               grid-template-columns: 1fr;
+           }
+
+
+           .footer-grid {
+               grid-template-columns: 1fr;
+               gap: 32px;
+           }
+       }
+   </style>
 </head>
 <body>
+   <header id="header">
+       <nav class="navbar">
+           <div class="nav-container">
+               <div class="nav-logo">
+                   <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                       <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                       <rect x="9" y="9" width="6" height="6"></rect>
+                       <line x1="9" y1="1" x2="9" y2="4"></line>
+                       <line x1="15" y1="1" x2="15" y2="4"></line>
+                       <line x1="9" y1="20" x2="9" y2="23"></line>
+                       <line x1="15" y1="20" x2="15" y2="23"></line>
+                       <line x1="20" y1="9" x2="23" y2="9"></line>
+                       <line x1="20" y1="14" x2="23" y2="14"></line>
+                       <line x1="1" y1="9" x2="4" y2="9"></line>
+                       <line x1="1" y1="14" x2="4" y2="14"></line>
+                   </svg>
+                   <span class="logo-text">Vernor</span>
+               </div>
 
-<header>
-    <div class="logo">Vernor</div>
-    <nav>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact Us</a>
-    </nav>
-</header>
+           <div class="nav-links" id="navLinks">
+               <a href="#home" class="nav-link">Home</a>
+               <a href="#services" class="nav-link">Services</a>
+               <a href="#about" class="nav-link">About</a>
+               <a href="#contact" class="nav-btn">Contact</a>
+           </div>
 
-<section class="hero">
-    <div>
-        <h1>Innovating the Future</h1>
-        <p>We provide modern technology solutions that streamline your business and empower growth.</p>
+           <button class="mobile-menu-btn" id="mobileMenuBtn">
+               <span class="hamburger"></span>
+               <span class="hamburger"></span>
+               <span class="hamburger"></span>
+           </button>
+       </div>
+   </nav>
+
+   </header>
+
+   <section id="home" class="hero">
+       <div class="hero-grid"></div>
+       <div class="hero-content">
+           <div class="hero-badge">
+               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+               </svg>
+               Trusted Salesforce Experts
+           </div>
+           <h1 class="hero-title">Empowering Businesses with Salesforce Innovation</h1>
+           <p class="hero-description">
+               Vernor delivers customized Salesforce solutions that streamline operations, boost productivity, and drive business growth through intelligent CRM automation and integrations.
+           </p>
+           <div class="hero-buttons">
+               <a href="#services" class="btn btn-primary">
+                   Explore Services
+                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                       <polyline points="9 18 15 12 9 6"></polyline>
+                   </svg>
+               </a>
+               <a href="#contact" class="btn btn-secondary">Get Started</a>
+           </div>
+       </div>
+   </section>
+
+   <section id="services" class="services">
+       <div class="container">
+           <div class="section-header">
+               <h2 class="section-title">Our Salesforce Services</h2>
+               <p class="section-description">
+                   End-to-end Salesforce consulting, customization, and integration solutions designed to help businesses maximize their CRM potential.
+               </p>
+           </div>
+
+       <div class="services-grid">
+           <div class="service-card">
+               <div class="service-icon blue">
+                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                       <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                   </svg>
+               </div>
+               <h3 class="service-title">Salesforce Security</h3>
+               <p class="service-description">
+                   Secure your Salesforce org with advanced protection mechanisms, role-based access, and compliance-driven configurations.
+               </p>
+               <ul class="service-features">
+                   <li>Data Security & Shield Encryption</li>
+                   <li>Compliance Audits</li>
+                   <li>Monitoring & Risk Management</li>
+               </ul>
+           </div>
+
+           <div class="service-card">
+               <div class="service-icon orange">
+                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                       <polyline points="16 18 22 12 16 6"></polyline>
+                       <polyline points="8 6 2 12 8 18"></polyline>
+                   </svg>
+               </div>
+               <h3 class="service-title">Custom Salesforce Development</h3>
+               <p class="service-description">
+                   Build powerful Salesforce apps and custom solutions with Apex, Lightning Web Components (LWC), and robust API integrations.
+               </p>
+               <ul class="service-features">
+                   <li>Custom LWC Components</li>
+                   <li>Apex Automation & Triggers</li>
+                   <li>REST/SOAP API Integrations</li>
+               </ul>
+           </div>
+
+           <div class="service-card">
+               <div class="service-icon purple">
+                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                       <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                       <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                       <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                       <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                   </svg>
+               </div>
+               <h3 class="service-title">CRM Optimization</h3>
+               <p class="service-description">
+                   Optimize your Salesforce CRM for speed, scalability, and user engagement with tailored configurations and automation.
+               </p>
+               <ul class="service-features">
+                   <li>Process Builder to Flow Migration</li>
+                   <li>Data Model & Schema Optimization</li>
+                   <li>Performance Tuning</li>
+               </ul>
+           </div>
+
+           <div class="service-card">
+               <div class="service-icon cyan">
+                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                       <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                       <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                       <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                   </svg>
+               </div>
+               <h3 class="service-title">Salesforce Analytics</h3>
+               <p class="service-description">
+                   Unlock actionable insights using Salesforce Einstein Analytics, dashboards, and AI-driven business intelligence.
+               </p>
+               <ul class="service-features">
+                   <li>Einstein AI & Predictive Insights</li>
+                   <li>Dynamic Reports & Dashboards</li>
+                   <li>Data Visualization Solutions</li>
+               </ul>
+           </div>
+
+           <div class="service-card">
+               <div class="service-icon rose">
+                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                       <circle cx="12" cy="12" r="10"></circle>
+                       <line x1="2" y1="12" x2="22" y2="12"></line>
+                       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                   </svg>
+               </div>
+               <h3 class="service-title">Salesforce Consulting</h3>
+               <p class="service-description">
+                   Accelerate digital transformation with strategic Salesforce consulting, AppExchange app development, and implementation expertise.
+               </p>
+               <ul class="service-features">
+                   <li>Salesforce Implementation Strategy</li>
+                   <li>AppExchange App Development</li>
+                   <li>Integration & Change Management</li>
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   </section>
+
+   <section id="about" class="about">
+       <div class="container">
+           <div class="about-grid">
+               <div class="about-content">
+                   <h2 class="about-title">Why Choose Vernor?</h2>
+                   <p class="about-intro">
+                       With years of Salesforce experience, Vernor empowers organizations to scale smarter through automation, customization, and seamless CRM transformation.
+                   </p>
+
+               <div class="about-features">
+                   <div class="about-feature">
+                       <div class="about-feature-icon">
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                           </svg>
+                       </div>
+                       <div class="about-feature-content">
+                           <h3 class="about-feature-title">Certified Salesforce Developers</h3>
+                           <p class="about-feature-text">Our experts hold multiple Salesforce certifications and deliver enterprise-grade custom solutions tailored to your goals.</p>
+                       </div>
+                   </div>
+
+                   <div class="about-feature">
+                       <div class="about-feature-icon">
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <polyline points="16 18 22 12 16 6"></polyline>
+                               <polyline points="8 6 2 12 8 18"></polyline>
+                           </svg>
+                       </div>
+                       <div class="about-feature-content">
+                           <h3 class="about-feature-title">Proven Salesforce Expertise</h3>
+                           <p class="about-feature-text">Delivered 100+ successful Salesforce projects globally, helping clients achieve measurable growth and automation efficiency.</p>
+                       </div>
+                   </div>
+
+                   <div class="about-feature">
+                       <div class="about-feature-icon">
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                               <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                               <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                               <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                           </svg>
+                       </div>
+                       <div class="about-feature-content">
+                           <h3 class="about-feature-title">24/7 Salesforce Support</h3>
+                           <p class="about-feature-text">We provide continuous Salesforce monitoring, maintenance, and user support for uninterrupted business performance.</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+
+           <div class="stats-grid">
+                <div class="stat-card blue-stat">
+                    <h3 class="stat-number">Certified</h3>
+                    <p class="stat-label">Salesforce Experts</p>
+                </div>
+                <div class="stat-card dark-stat">
+                    <h3 class="stat-number">Proven</h3>
+                    <p class="stat-label">Client Success Rate</p>
+                </div>
+                <div class="stat-card green-stat">
+                    <h3 class="stat-number">Tailored</h3>
+                    <p class="stat-label">Business Solutions</p>
+                </div>
+                <div class="stat-card orange-stat">
+                    <h3 class="stat-number">Trusted</h3>
+                    <p class="stat-label">By Global Clients</p>
+                </div>
+            </div>
+
+       </div>
+   </div>
+   </section>
+
+   <section id="contact" class="contact">
+       <div class="container">
+           <div class="contact-wrapper">
+               <div class="contact-header">
+                   <h2 class="contact-title">Get In Touch</h2>
+                   <p class="contact-subtitle">Ready to enhance your Salesforce ecosystem? Let’s discuss your business goals today.</p>
+               </div>
+
+           <div class="contact-grid">
+               <div class="contact-info">
+                   <h3 class="contact-info-title">Contact Information</h3>
+                   <div class="contact-info-list">
+                       <div class="contact-info-item">
+                           <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                               <polyline points="22,6 12,13 2,6"></polyline>
+                           </svg>
+                           <div>
+                               <p class="contact-label">Email</p>
+                               <a href="mailto:tirth@vernor.in" class="contact-value">tirth@vernor.in</a>
+                           </div>
+                       </div>
+
+                       <div class="contact-info-item">
+                           <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                           </svg>
+                           <div>
+                               <p class="contact-label">Connect</p>
+                               <p class="contact-value">Fill the form to connect</p>
+                           </div>
+                       </div>
+
+                       <div class="contact-info-item">
+                           <svg class="contact-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                               <circle cx="12" cy="10" r="3"></circle>
+                           </svg>
+                           <div>
+                               <p class="contact-label">Address</p>
+                               <p class="contact-value">Times Of India Press Road, Satellite<br>Ahmedabad, India 380015</p>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+
+               <div class="contact-form-wrapper">
+                   <h3 class="contact-form-title">Send a Message</h3>
+                   <form class="contact-form" id="contactForm" action="https://formspree.io/f/mkgqbrbr" method="post">
+                       <input type="text" name="name" placeholder="Your Name" class="form-input" required>
+                       <input type="email" name="email" placeholder="Your Email" class="form-input" required>
+                       <textarea rows="4" name="message" placeholder="Your Message" class="form-textarea" required></textarea>
+                       <button type="submit" class="form-submit">Send Message</button>
+                   </form>
+               </div>
+           </div>
+       </div>
     </div>
-</section>
+    </section>
 
-<section id="about">
-    <h2>About Us</h2>
-    <p>Vernor Technologies is a leading technology solutions provider, specializing in innovative software development, web and mobile applications, and enterprise integrations. Our mission is to help businesses leverage modern technologies to drive efficiency and growth.</p>
-    <p>With a strong focus on quality, security, and scalability, we deliver solutions that meet the unique needs of each client, ensuring measurable impact and long-term value.</p>
-</section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/mkgqbrbr" method="post">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-    </form>
-</section>
 
-<footer>
-    &copy; 2025 Vernor. All Rights Reserved.
-</footer>
 
-<script>
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e){
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
+   <footer class="footer">
+       <div class="container">
+           <div class="footer-grid">
+               <div class="footer-brand">
+                   <div class="footer-logo">
+                       <svg class="footer-logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                           <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                           <rect x="9" y="9" width="6" height="6"></rect>
+                           <line x1="9" y1="1" x2="9" y2="4"></line>
+                           <line x1="15" y1="1" x2="15" y2="4"></line>
+                           <line x1="9" y1="20" x2="9" y2="23"></line>
+                           <line x1="15" y1="20" x2="15" y2="23"></line>
+                           <line x1="20" y1="9" x2="23" y2="9"></line>
+                           <line x1="20" y1="14" x2="23" y2="14"></line>
+                           <line x1="1" y1="9" x2="4" y2="9"></line>
+                           <line x1="1" y1="14" x2="4" y2="14"></line>
+                       </svg>
+                       <span class="footer-logo-text">Vernor</span>
+                   </div>
+                   <p class="footer-description">
+                       Empowering businesses through innovative IT solutions and exceptional service delivery worldwide.
+                   </p>
+               </div>
 
+
+               <div class="footer-links">
+                   <h4 class="footer-heading">Services</h4>
+                   <ul class="footer-list">
+                       <li><a href="#services">Cloud Solutions</a></li>
+                       <li><a href="#services">Cybersecurity</a></li>
+                       <li><a href="#services">Custom Development</a></li>
+                       <li><a href="#services">IT Infrastructure</a></li>
+                   </ul>
+               </div>
+
+
+               <div class="footer-links">
+                   <h4 class="footer-heading">Company</h4>
+                   <ul class="footer-list">
+                       <li><a href="#about">About Us</a></li>
+                       <li><a href="#contact">Careers</a></li>
+                       <li><a href="#contact">Blog</a></li>
+                       <li><a href="#contact">Contact</a></li>
+                   </ul>
+               </div>
+
+
+               <div class="footer-links">
+                   <h4 class="footer-heading">Legal</h4>
+                   <ul class="footer-list">
+                       <li><a href="#contact">Privacy Policy</a></li>
+                       <li><a href="#contact">Terms of Service</a></li>
+                       <li><a href="#contact">Cookie Policy</a></li>
+                   </ul>
+               </div>
+           </div>
+
+
+           <div class="footer-bottom">
+               <p>&copy; 2025 Vernor IT Services. All rights reserved.</p>
+           </div>
+       </div>
+   </footer>
+  
+   <script>
+       const header = document.getElementById('header');
+       const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+       const navLinks = document.getElementById('navLinks');
+       const navLinksItems = navLinks.querySelectorAll('.nav-link');
+
+
+       window.addEventListener('scroll', () => {
+           if (window.scrollY > 50) {
+               header.classList.add('scrolled');
+           } else {
+               header.classList.remove('scrolled');
+           }
+       });
+
+
+       mobileMenuBtn.addEventListener('click', () => {
+           navLinks.classList.toggle('active');
+           mobileMenuBtn.classList.toggle('active');
+       });
+
+
+       navLinksItems.forEach(link => {
+           link.addEventListener('click', () => {
+               navLinks.classList.remove('active');
+               mobileMenuBtn.classList.remove('active');
+           });
+       });
+
+
+       const observerOptions = {
+           threshold: 0.1,
+           rootMargin: '0px 0px -100px 0px'
+       };
+
+
+       const observer = new IntersectionObserver((entries) => {
+           entries.forEach(entry => {
+               if (entry.isIntersecting) {
+                   entry.target.style.opacity = '1';
+                   entry.target.style.transform = 'translateY(0)';
+               }
+           });
+       }, observerOptions);
+
+
+       document.querySelectorAll('.service-card, .about-feature, .stat-card').forEach(el => {
+           el.style.opacity = '0';
+           el.style.transform = 'translateY(30px)';
+           el.style.transition = 'all 0.6s ease';
+           observer.observe(el);
+       });
+   </script>
 </body>
-</html>
+
