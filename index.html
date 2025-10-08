@@ -955,6 +955,10 @@
                border-radius: 2px;
            }
 
+           .mobile-menu-btn.active:hover .hamburger{
+                background: red !important;
+            }
+
 
            #header.scrolled .hamburger {
                background: #1f2937;
@@ -1000,6 +1004,15 @@
                grid-template-columns: 1fr;
                gap: 32px;
            }
+       }
+       @media (max-width: 600px){
+            .stats-grid {
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            .about-content{
+                width: 90vw;
+            }
        }
    </style>
 </head>
@@ -1428,4 +1441,3 @@
        });
    </script>
 </body>
-
